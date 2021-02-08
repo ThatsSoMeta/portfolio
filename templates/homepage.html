@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<h1>Welcome, {{ user.username.title }}!</h1>
+<span>Not you? <a href='/accounts/logout/'>Log out</a>!</span>
+{% else %}
+<h1>Welcome to my portfolio!</h1>
+{% endif %}
+<p>This will give a little info about me.</p>
+
+<a href="/register">Create User Account</a>
+{% endblock %}

@@ -1,0 +1,7 @@
+<h1>Welcome! There is so much more you can do if you have an account!</h1>
+
+<form action="/new-user/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Let's Go!">
+</form>

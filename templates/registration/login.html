@@ -1,0 +1,21 @@
+{% extends '../index.html' %}
+
+{% block content %}
+
+<h1>Login:</h1>
+{% if form.errors %}
+<p>There is a problem with your login info.</p>
+{% endif %}
+{% if next %}
+<p>Action not allowed.</p>
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <p>Username:{{ form.username }}</p>
+    <p>Password:{{ form.password }}</p>
+    <p><input type='submit' value='Login'></p>
+</form>
+<span>Don't have an account? Sign up <a href="{% url 'register' %}">here</a>!</span>
+
+{% endblock %}
